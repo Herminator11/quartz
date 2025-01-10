@@ -26,7 +26,7 @@ Ein Frame besteht aus sieben Kennfeldern:
 - Acknowledge Feld (*ACK-Bit plus Endemarkierung*)
 - Endefeld (*End-of-frame*)
 ![](static/assets/pasted-image-1.png)
-![](quartz/static/assets/pasted-image-2.png)
+![](static/assets/pasted-image-2.png)
 - **Start**: dominant, dient der Snychronisation
 - **Identifier**: Information für den Empfänger und Prioritätsinformation für die Busarbitrierung
 - **RTR**: unterscheidet zwischen Daten- (dominant) und RTR-Telegramm (rezessiv)
@@ -95,7 +95,7 @@ Tritt ein Fehler mehrmals aufeinanderfolgend auf, führt dies zur automatischen 
  -> So bleibt Datenübertragung zuverlässig, auch in Umgebungen mit vielen Störungen.
 
 ### Differenzspannung
-![](quartz/static/assets/pasted-image-3.png)
+![](static/assets/pasted-image-3.png)
 - wenn im CAN-Bus keine Daten gesendet werden, sind die Spannungen ungefähr gleich (hier bei etwa 2,5V)
 - also ist die Differenzspannung 0V
 => "Ruhezustand" oder auch rezessiver Pegel
@@ -154,9 +154,9 @@ Wichtig:
 > 
 > Das System sorgt dafür, dass wichtige Nachrichten (mit hohem Prioritäts-Identifier) bevorzugt gesendet werden, ohne dass es zu Kollisionen kommt.
 
-![](quartz/static/assets/pasted-image-4.png)
-![](quartz/static/assets/pasted-image-5.png)
-![](quartz/static/assets/pasted-image-6.png)
+![](static/assets/pasted-image-4.png)
+![](static/assets/pasted-image-5.png)
+![](static/assets/pasted-image-6.png)
 
 # Einführung und Referenzmodell
 ## Kommunikationsarten
@@ -277,7 +277,7 @@ Codierung übersetzt die Bits (`0` und `1`) in ein Signal, das über ein Medium 
 - Signal: `1` -> hohe Spannung, `0` -> Niedrige Spannung.
 - Nachteil: Kein Takt im Signal -> Sender und Empfänger müssen synchronisiert werden.
 
-![](quartz/static/assets/pasted-image-7.png)
+![](static/assets/pasted-image-7.png)
 ### Manchester-Code
 - Jedes Bit hat einen Spannungswechsel in der Mitte:
 	- `1` -> Fallende Flanke (hoch zu niedrig)
@@ -285,7 +285,7 @@ Codierung übersetzt die Bits (`0` und `1`) in ein Signal, das über ein Medium 
 - Vorteil: Taktinformation ist enthalten
 - Nachteil: Doppelte Bandbreite im Vergleich zu NRZ
 ## Leitungscodierung binärer Signale, Beispiele
-![](quartz/static/assets/pasted-image-8.png)
+![](static/assets/pasted-image-8.png)
 1. Unipolares NRZ:
 	- Eine `1` wird durch eine hohe Spannung repräsentiert, während eine `0` keine Spannung hat
 2. Bipolar (AMI):
@@ -405,8 +405,8 @@ Bitfolge: `10100011`
 - das reduziert Kollisionen
 - Voraussetzung: die Ausbreitungsverzögerung ist kleiner als die Rahmensendezeit. (sonst ist Information des belegten Kanals veraltet und das Verfahren sinnlos).
 
-![](quartz/static/assets/pasted-image-9.png)
-![](quartz/static/assets/pasted-image-10.png)
+![](static/assets/pasted-image-9.png)
+![](static/assets/pasted-image-10.png)
 ### CSMA-Verfahren
 - Wenn der Netzadapter eines Knoten/Terminals eine Nachricht von der Schicht 3 zum Senden erhält, überprüft der Adapter, ob das Medium frei ist (listen before talking). Wenn das Medium frei ist, wird die Nachricht in einem Schicht 2 Rahmen gesendet. Ist das Medium nicht frei, wartet der Adapter und versucht es dann erneut (wieder Risiko der kollision).
 - Der fehlerfreie Empfang wird vom Empfänger quittiert (ACK)
@@ -416,7 +416,7 @@ Bitfolge: `10100011`
 - Nach Erkennen der Kollision wird die laufende Sendung abgebrochen, ein spez. Jamming-Signal wird gesendet, damit alle Knoten die Kollision sicher erkennen
 - keine ACKs
 - kombinierbar mit CSMA-Verfahren (CSMA/CD)
-![](quartz/static/assets/pasted-image-11.png)
+![](static/assets/pasted-image-11.png)
 ## Ethernet
 - sehr weit verbreitete Schnittstelle
 - preiswerte Adapter
@@ -424,7 +424,7 @@ Bitfolge: `10100011`
 - Rahmenformat in allen Realisierungen immer gleich
 
 ### Ethernet - Frame
-![](quartz/static/assets/pasted-image-12.png)
+![](static/assets/pasted-image-12.png)
 - Maximale Paketlänge: 1518 Byte ohne Preamble
 - Minimale Paketlänge: 64 Byte ohne Preamble
 - Preamble (Start of Frame Delimiter -SFD): 8 Byte - Synchronmuster aus abwechselnd "1" und "0", Ende "11" (7 Byte mit 10101010 und ein Byte mit 10101011 - Ende der Preamble)
@@ -490,13 +490,13 @@ Ein Übermittlungsabschnitt (Data Link) besteht aus:
 - Zwischenspeicher (Puffer) beim Sender und Empfänger
 
 - Eine Übertragung ist erst abgeschlossen, wenn der zu übermittelnde Datenblock vollständig und fehlergeprüft im Empfangsspeicher abgelegt ist.
-![](quartz/static/assets/pasted-image-13.png)
+![](static/assets/pasted-image-13.png)
 
 ## Sicherung je Übermittlungsschicht (Link-by-Link)
-![](quartz/static/assets/pasted-image-14.png)
+![](static/assets/pasted-image-14.png)
 
 ## Sicherung je Übermittlungsabschnitt und End-to-End
-![](quartz/static/assets/pasted-image-15.png)
+![](static/assets/pasted-image-15.png)
 ## Fehlerbehandlung
 <u>Fehler ignorieren</u>
 - Echtzeit-Übertragung -> kurzzeitiger Fehler oder Lücke
@@ -544,7 +544,7 @@ Ein Übermittlungsabschnitt (Data Link) besteht aus:
 
 ### Rahmenaufbau
 Die Dateneinheiten (Protocol Date Units -PDUs) der Schicht 2 heißen Blöcke (frames - Rahmen) und haben einen festgelegten Aufbau:
-![](quartz/static/assets/pasted-image-16.png)
+![](static/assets/pasted-image-16.png)
 - Flag: (Blockbegrenzung). Jeder Block beginnt und endet mit einem Flag (Bitfolge 0111 1110).
 - Werden zwei Blöcke hintereinander übertragen, braucht zwischen beiden nur ein Flag zu stehen
 - Zwischen den Flags darf die Bit-Kombination 0111 1110 nicht vorkommen
@@ -564,11 +564,11 @@ Die Dateneinheiten (Protocol Date Units -PDUs) der Schicht 2 heißen Blöcke (fr
 - Station A ist die Terminal-Seite, Adresse 0x03
 - Station B ist die Netzt-Seite, Adresse 0x01
 
-![](quartz/static/assets/pasted-image-17.png)
+![](static/assets/pasted-image-17.png)
 ### Steuerfeld
 - kennzeichnet die Art des Blocks, die Art der Befehle und Meldungen
 
-![](quartz/static/assets/pasted-image-18.png)
+![](static/assets/pasted-image-18.png)
 
 ### Datenfeld (Informationsfeld)
 - hat eine beliebige Länge
@@ -576,24 +576,24 @@ Die Dateneinheiten (Protocol Date Units -PDUs) der Schicht 2 heißen Blöcke (fr
 - Nur der I-Block überträgt Daten
 - Mit einem gesetzten Poll-Bit (P-Bit) wird damit die Gegenstation zur unmittelbaren Quittung mit einem S-Block aufgefordert, ist das P-Bit "0", ist es dem Empf#nger freistellt, mit einer S-Meldung oder einem I-Befehl zu quittieren.
 
-![](quartz/static/assets/pasted-image-19.png)
+![](static/assets/pasted-image-19.png)
 ### FCS
 - Frame Checking Sequence (Blockprüfungsfeld)
 - beim Sender erzeugt, indem der gesamte Block nach dem Flag durch ein Generatorpolynom geteilt und der invertierte Rest als FCS übertragen wird.
 
-![](quartz/static/assets/pasted-image-20.png)
+![](static/assets/pasted-image-20.png)
 
 ### S-Blöcke
 - dienen der Steuerung der Datenübermittlung und enthalten deshalb Empfangsfolgenummern (Quittungen).
 - Ein auf "0" gesetztes Poll-Bit in einem S-Befehl muss immer mit einem Final-Bit = 0 in der entsprechenden Meldung quittiert werden.
 - Ein auf "1" gesetztes Poll-Bit in einem S-Befehl muss immer mit einem Final-Bit = 1 in der Meldung quittiert werden.
 
-![](quartz/static/assets/pasted-image-21.png)
+![](static/assets/pasted-image-21.png)
 
 ### U-Blöcke
 - enthalten keinen N(S) und keine N(R), sie dienen dem ungesicherten (keine Flusskontrolle) Transport von Informationen oder Steuerzeichen. Das Poll/Final-Bit hat die gleiche Bedeutung wie für S-Blöcke.
 
-![](quartz/static/assets/pasted-image-22.png)
+![](static/assets/pasted-image-22.png)
 ### Informationsübertragung
 - zur gesicherten Übertragung werden I-Blöcke mit dem Sendefolgenummerzähler \[N(S)] durchnummeriert und bestätigt mit dem Empfangsfolgenummernzähler \[N(R)]
 - *Sendefolgenummer N(S)* (send sequence number):
