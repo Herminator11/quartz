@@ -25,7 +25,7 @@ Ein Frame besteht aus sieben Kennfeldern:
 - CRC-Feld (*enthält eine 15-bit Prüfsumme sowie eine Endmarkierung*)
 - Acknowledge Feld (*ACK-Bit plus Endemarkierung*)
 - Endefeld (*End-of-frame*)
-![](quartz/static/assets/pasted-image-1.png)
+![](static/assets/pasted-image-1.png)
 ![](quartz/static/assets/pasted-image-2.png)
 - **Start**: dominant, dient der Snychronisation
 - **Identifier**: Information für den Empfänger und Prioritätsinformation für die Busarbitrierung
