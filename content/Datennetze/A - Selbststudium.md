@@ -35,9 +35,7 @@ IP-Adresse -> logische Adresse
 - diese ermittelt er mit ARP (= Address Resolution Protocol)
 
 ### Ermittlung der physikalischen Adresse
-%%![[Drawing 2024-10-21 14.59.07.excalidraw]]%%![[../../Excalidraw/Drawing 2024-10-21 14.59.07.excalidraw.svg]]
-
-
+![](static/assets/dn-1.svg)
 ## IP-Grundlagen
 ### MAC-Adresse
 - physikalische Adresse
@@ -53,7 +51,7 @@ IP-Adresse -> logische Adresse
 - IPv4 Adresse besteht aus 4 Dezimalzahlen (4 x 8 = 32 Bit)
 - besteht aus einem Netzwerkanteil (im Bild orange) und Host-Anteil (im Bild blau)
 
-![[Pasted image 20241021153353.png]]
+![](static/assets/dn-2.png)
 ### (Sub-) Netzmaske
 - legt Trennung zwischen Host- und Netzwerkanteil fest
 - besteht aus n binären Einsen
@@ -71,7 +69,7 @@ IP-Adresse -> logische Adresse
 - Die höchste Adresse im Netzwerk ist die Broadcastadresse (Nachricht an alle)
 
 ### Intranetadressen
-![[Pasted image 20241021193854.png]]
+![](static/assets/dn-3.png)
 - sind *nicht* weltweit eindeutig!
 - dienen zur internet Vernetzung (bspw. von Unternehmen oder privaten Netzen) und dürfen frei verwendet werden
 - *keine* Kommunikation außerhalb des eigenen Netzes möglich!
@@ -87,8 +85,8 @@ Network Address Translation
 	- lokale meistens mit 192. / 172. / oder 10.
 - lokale IP-Adressen besitzen außerhalb keine Gültigkeit
 
-%%![[../../Excalidraw/Drawing 2024-10-24 14.48.41.excalidraw]]%%![[../../Excalidraw/Drawing 2024-10-24 14.48.41.excalidraw.svg]]
-%%![[../../Excalidraw/Drawing 2024-10-24 15.01.48.excalidraw]]%%![[../../Excalidraw/Drawing 2024-10-24 15.01.48.excalidraw.svg]]
+![](static/assets/dn-4.svg)
+![](static/assets/dn-5.svg)
 
 - mit NAT wird meistens SNAT gemeint (Source NAT)
 
@@ -391,7 +389,7 @@ IPv6 Adressen:
 # TCP und UDP
 - beide Teil des TCP/IP - Stacks
 - beide bündeln Daten in Paketen
-%%![[../../Excalidraw/Drawing 2024-11-19 10.24.02.excalidraw]]%%![[../../Excalidraw/Drawing 2024-11-19 10.24.02.excalidraw.svg]]
+![](static/assets/dn-6.svg)
 ## TCP
 > [!info]- Wiederholung ISO-Schichtenmodell
 > 
@@ -439,13 +437,13 @@ IPv6 Adressen:
 - UDP-Pakete werden als "Datagramme" bezeichnet
 
 ## TCP vs. UDP
-![[../../pics/Pasted image 20241203103331.png]]
+![](static/assets/dn-7.png)
 - UDP ist schneller, aber weniger zuverlässig als TCP
 - bei TCP-Kommunikation bauen Computer erst eine Verbindung über einen automatisierten Prozess auf (-> wird "Handshake" genannt)
 - wenn Handshake abgeschlossen ist -> überträgt ein Computer die Datenpakete an den anderen
 - bei der UDP-Kommunikation findet dieser Prozess nicht statt
 - -> Computer kann einfach beginnen, Daten an den anderen zu senden:
-![[../../pics/TCP vs UDP Update v2.svg]]
+![](static/assets/dn-8.svg)
 Da TCP die Reihenfolge angibt, in der die Datenpakete empfangen werden sollen, und bestätigt, dass die Pakete wie vorgesehen ankommen.
 Wenn ein Paket nicht ankommt - z.B. aufgrund von Staus in zwischengeschalteten Netzwerken - verlangt TCP, dass es erneut gesendet wird.
 
@@ -529,7 +527,7 @@ oder anders gesagt:
 Man nennt das ganze "<span style="background:#d4b106">Sliding-Window</span>".
 ### Sliding-Window
 - man stelle sich über dem Puffer eine Art Schieber/Fenster vor
-%%![[../../Excalidraw/Drawing 2024-12-03 09.54.17.excalidraw]]%%![[../../Excalidraw/Drawing 2024-12-03 09.54.17.excalidraw.svg]]
+![](static/assets/dn-9.svg)
 - bei jeder empfangenen Bestätigung wird dieser Schieber weitergeschoben
 - Größe des Fensters wird durch Puffergröße des Empfängers festgelegt
 	-> diese wird ja bei jeder Bestätigung übermittelt
@@ -537,7 +535,7 @@ Man nennt das ganze "<span style="background:#d4b106">Sliding-Window</span>".
 - die Breite ändert sich mit jeder Bestätigung und das Fenster "gleitet" -> "sliding window"
 
 <u>Beispiel zum Bestätigungsmechanismus</u>:
-![[../../pics/Pasted image 20241203100919.png]]
+![](static/assets/dn-10.png)
 - blauer Pfeil auf Empfängerseite (rechts) = TCP kann Daten an Anwendungsprotokollschicht abgeben
 - blauer Pfeil auf Senderseite (links) = bekommt TCP Daten von der Anwendungsprotkollschicht zum Versenden
 
@@ -584,7 +582,7 @@ Für virtuelle Verbindungen sind folgende 5 Parameter wichtig.
 ### Verbindungsaufnahme (3-Wege-Handshake)
 Damit beide Geräte wissen, dass sie miteinander sprechen wollen, machen sie einen 3-Wege-Handshake:
 
-![[../../pics/Pasted image 20241203133956.png]]
+![](static/assets/dn-11.png)
 
 1. SYN (Synchronisieren):
 	- Gerät, das die Verbindung aufbauen will, schickt Signal zusammen mit Anfangsnummer (**ISN** = Initial Sequence Number) und seiner Puffergröße
@@ -605,7 +603,7 @@ Damit beide Geräte wissen, dass sie miteinander sprechen wollen, machen sie ein
 - Am Ende müssen Geräte die Verbindung sauber beenden
 	-> genutzte Ressourcen freigeben
 
-![[../../pics/Pasted image 20241203134011.png]]
+![](static/assets/dn-12.png)
 
 1. FIN (Finish):
 	- Ein Gerät sagt: "Ich bin fertig und möchte die Verbindung schließen."
@@ -623,21 +621,21 @@ Damit beide Geräte wissen, dass sie miteinander sprechen wollen, machen sie ein
 - Sprache für Kommunikation zwischen Computern
 
 ## GET-Request
-![[../../pics/Pasted image 20241217105212.png]]
+![](static/assets/dn-13.png)
 - Browser stellt Anfrage an Wikipedia Webserver
 
-![[../../pics/Pasted image 20241217105233.png]]
+![](static/assets/dn-14.png)
 - der Webserver nimmt die Anfrage entgegen und sender als Antwort eine HTML-Datei
 
 ## POST-Request
 - über HTTP können nicht nur Information erhalten werden sondern auch versendet werden
 	- z.B. Log-in Formular
 
-![[../../pics/Pasted image 20241217110909.png]]
+![](static/assets/dn-15.png)
 - Email und Passwort wird an einen Server gesendet
 - dieser wertet die Daten aus und verifiziert die Anmeldung
 
-![[../../pics/Pasted image 20241217111039.png]]
+![](static/assets/dn-16.png)
  - Webserver sendet Token zurück in Form eines Cookies, der in meinem Browser gespeichert wird
 
 ## Base64-Kodierung
@@ -690,7 +688,7 @@ Wie schon oben erklärt, arbeitet HTTP mit einem HTTP-Request und einem HTTP-Res
 
 Das Bild zeigt den prinzipiellen Ablauf einer Kommunikation zwischen Client (Web-Browser) und Server (Web-Server).
 Der Client sendet eine HTTP-Request, worauf der Server mit einem HTTP-Response antwortet.
-![[../../pics/Pasted image 20241217120220.png]]
+![](static/assets/dn-17.png)
 
 Der Client stellt erstmal eine Anfrage an den Server (Request).
 Bei HTTP gibt es zwei wichtige Kommandos in der Request-Line: 
@@ -817,5 +815,3 @@ TLS sorgt für eine verschlüsselte Kommunikation über Netzwerke.
 - TLS bilden eine zusätzliche Schicht über TCP.
 - HTTPS nutzt TLS, um die Übertragung zwischen Client und Server zu sichern.
 - Nachrichten bleiben dabei sowohl während der Übertragung als auch auf den Endgeräten verschlüsselt.
-
-# Netzwerk-Sicherheit und Datenschutz
