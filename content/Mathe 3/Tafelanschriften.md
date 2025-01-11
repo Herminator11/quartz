@@ -38,4 +38,4 @@ share_updated: 2024-12-29T13:27:57+01:00
 ![](static/assets/mathpic-17.jpeg)
 ![](static/assets/mathpic-20.jpeg)
 ## 19. November 2024
-![](static/assets/mathpic-19.jpeg)]]
+![](static/assets/mathpic-19.jpeg)
