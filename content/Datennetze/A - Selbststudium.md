@@ -35,7 +35,7 @@ IP-Adresse -> logische Adresse
 - diese ermittelt er mit ARP (= Address Resolution Protocol)
 
 ### Ermittlung der physikalischen Adresse
-![](static/assets/dn-1.svg)
+![](static/assets/Drawing%202024-10-21%2014.59.07.excalidraw.svg)
 ## IP-Grundlagen
 ### MAC-Adresse
 - physikalische Adresse
