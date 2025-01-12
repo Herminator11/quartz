@@ -27,20 +27,20 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.Explorer({
-      title: "BME 3",
+    // Component.Explorer({
+    //   title: "BME 3",
       
-      folderClickBehavior: "link",
-      folderDefaultState: "open",
-      useSavedState: true,
-      mapFn: (node) => {
-        if (node.depth > 0) {
-          node.displayName = node.file
-            ? "📄 " + node.displayName
-            : "📁 " + node.displayName;
-        }
-      },
-    })
+    //   folderClickBehavior: "link",
+    //   folderDefaultState: "open",
+    //   useSavedState: true,
+    //   mapFn: (node) => {
+    //     if (node.depth > 0) {
+    //       node.displayName = node.file
+    //         ? "📄 " + node.displayName
+    //         : "📁 " + node.displayName;
+    //     }
+    //   },
+    // })
   ],
   right: [
     Component.Graph(),
