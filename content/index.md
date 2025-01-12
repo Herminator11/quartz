@@ -18,12 +18,7 @@ layout: default
   </nav>
 </header>
 
-<section id="datennetze">
-  <h1>Datennetze</h1>
-  <p>Informationen zu den Datennetzen...</p>
-</section>
-
-<section id="progA">
-  <h1>Prog A</h1>
-  <p>Weitere Informationen...</p>
+<section id="blog">
+  <h1>Meine Zusammenfassungen</h1>
+  <p>Hier findest du meine Zusammenfassungen zu dem dritten Semester Media Engineering.</p>
 </section>
