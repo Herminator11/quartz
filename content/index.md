@@ -12,7 +12,7 @@ title: "Home"
 Hier findest du alle meine Zusammenfassungen zum dritten Semester von Media Engineering.
 
 ## Navigation
-- [A - Selbststudium](content/Datennetze/A%20-%20Selbststudium.md)
+- [A - Selbststudium](Datennetze/A%20-%20Selbststudium.md)
 - [B - Selbststudium](content/Datennetze/B%20-%20Selbststudium.md)
 - [0. Verzeichnis](content/Mathe%203/0.%20Verzeichnis.md)
 - [0. Übersicht](content/Prog%203A/0.%20Übersicht.md)
