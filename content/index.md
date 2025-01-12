@@ -12,9 +12,9 @@ title: "Home"
 Hier findest du alle meine Zusammenfassungen zum dritten Semester von Media Engineering.
 
 ## Navigation
-- [A - Selbststudium](Datennetze/A%20-%20Selbststudium.md)
-- [B - Selbststudium](content/Datennetze/B%20-%20Selbststudium.md)
-- [0. Verzeichnis](content/Mathe%203/0.%20Verzeichnis.md)
-- [0. Übersicht](content/Prog%203A/0.%20Übersicht.md)
-- [1. Einführung](content/Prog%203B/Zusammenfassung/1.%20Einführung.md)
+- [Datennetze A](Datennetze/A%20-%20Selbststudium.md)
+- [Datennetze B](Datennetze/B%20-%20Selbststudium.md)
+- [Mathe 3](Mathe%203/0.%20Verzeichnis.md)
+- [Prog3 A](Prog%203A/0.%20Übersicht.md)
+- [Prog3 B](Prog%203B/Zusammenfassung/1.%20Einführung.md)
 
