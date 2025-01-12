@@ -185,7 +185,7 @@ Warum?
 Nehmen wir unser TH Netzwerk 141.75.0.0/16. Die Broadcastadresse ist 141.75.255.255. Wenn wir dieses Netzwerk nicht aufteilen würden, kämen die Broadcasts bei allen Adressen der TH an. Das wäre ein riesiger, unnötiger Datenverkehr. Man teilt deshalb das Netzwerk in kleinere teile auf, um die Broadcasts zu minimieren. Die Netzwerke sollen so klein wie möglich, aber so groß wir nötig sein.
 
 > [!example]- Beispiel
-> ### Ausgangslage
+> **Ausgangslage**
 > 
 > Wir starten mit einem größeren Netzwerk:
 > - **Netzwerkadresse**: `202.68.24.0/24`
@@ -201,11 +201,11 @@ Nehmen wir unser TH Netzwerk 141.75.0.0/16. Die Broadcastadresse ist 141.75.255.
 > 
 > ---
 > 
-> ### Schritt 1: Bestimmen der Netzwerkgröße
+> <u>Schritt 1: Bestimmen der Netzwerkgröße</u>
 > 
 > Um genügend Adressen zu haben, nehmen wir die **nächstgrößere Zweierpotenz** für mindestens 13 Adressen. Die nächste Zweierpotenz ist **16** (also \(2^4 = 16\)), die uns ausreichend Adressen bietet.
 > 
-> ### Schritt 2: Anpassen der Subnetzmaske
+> <u>Schritt 2: Anpassen der Subnetzmaske</u>
 > 
 > Da wir nun 16 Adressen benötigen, reicht es, die letzten **4 Bits** für die Adressen der einzelnen Geräte zu nutzen (also **höchstwertige 4 Bits für das Netzwerk**, die restlichen 4 Bits für die Hosts). So sieht die **neue Subnetzmaske** aus:
 > - Die Subnetzmaske wird auf **255.255.255.240** gesetzt (im Binärformat: `11111111.11111111.11111111.11110000`).
@@ -213,7 +213,7 @@ Nehmen wir unser TH Netzwerk 141.75.0.0/16. Die Broadcastadresse ist 141.75.255.
 > 
 > ---
 > 
-> ### Schritt 3: Beispiel für die Aufteilung
+> <u>Schritt 3: Beispiel für die Aufteilung</u>
 > 
 > Mit der neuen Maske `/28` können wir mehrere kleine Netzwerke definieren, die jeweils 16 Adressen enthalten. Diese Netzwerke können wie folgt aussehen:
 > 
@@ -227,7 +227,7 @@ Nehmen wir unser TH Netzwerk 141.75.0.0/16. Die Broadcastadresse ist 141.75.255.
 >    - **Hostbereich**: `202.68.24.17` bis `202.68.24.30`
 >    - **Broadcastadresse**: `202.68.24.31`
 > 
-> ### Warum gibt es 16 Subnetze?
+> Warum gibt es 16 Subnetze?
 > 
 > Da wir die letzten 4 Bits für die Hosts verwenden, bleiben die vorangehenden **4 Bits** für verschiedene Subnetze übrig. Mit diesen 4 Bits lassen sich \(2^4 = 16\) unterschiedliche Netzwerke bilden, die jeweils 16 Adressen enthalten. 
 > 
@@ -237,7 +237,7 @@ Nehmen wir unser TH Netzwerk 141.75.0.0/16. Die Broadcastadresse ist 141.75.255.
 > - `202.68.24.32/28`
 > - und so weiter.
 > 
-> ### Zusammengefasst
+> **Zusammengefasst**
 > 
 > - Wir haben das größere Netzwerk `202.68.24.0/24` in kleinere **Subnetze** mit jeweils 16 Adressen unterteilt, um ein Netzwerk für 10 PCs und einige Reserven bereitzustellen.
 > - Die neue Netzmaske `/28` erlaubt es, genau **16 kleine Netzwerke** mit jeweils 16 Adressen zu erstellen.

@@ -2,10 +2,6 @@
 title: "Startseite"
 layout: default
 ---
----
-layout: default
-title: "Home"
----
 # Willkommen auf meiner Seite
 
 ## Info
