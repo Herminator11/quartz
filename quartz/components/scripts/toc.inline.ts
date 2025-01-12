@@ -7,6 +7,10 @@ const observer = new IntersectionObserver((entries) => {
     if (windowHeight && tocEntryElement) {
       if (entry.boundingClientRect.y < windowHeight) {
         tocEntryElement.classList.add("in-view")
+        tocEntryElement.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+        })
       } else {
         tocEntryElement.classList.remove("in-view")
       }
