@@ -29,9 +29,17 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Darkmode(),
     Component.Explorer({
       title: "BME 3",
+      
       folderClickBehavior: "link",
       folderDefaultState: "open",
       useSavedState: true,
+      mapFn: (node) => {
+        if (node.depth > 0) {
+          node.displayName = node.file
+            ? "📄 " + node.displayName
+            : "📁 " + node.displayName;
+        }
+      },
     })
   ],
   right: [
@@ -49,7 +57,20 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.Explorer({
+      title: "BME 3",
+      
+      folderClickBehavior: "link",
+      folderDefaultState: "open",
+      useSavedState: true,
+      mapFn: (node) => {
+        if (node.depth > 0) {
+          node.displayName = node.file
+            ? "📄 " + node.displayName
+            : "📁 " + node.displayName;
+        }
+      },
+    })
   ],
   right: [],
 }
