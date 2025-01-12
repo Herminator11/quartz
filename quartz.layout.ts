@@ -27,7 +27,12 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.Explorer({
+      title: "BME 3",
+      folderClickBehavior: "link",
+      folderDefaultState: "open",
+      useSavedState: true,
+    })
   ],
   right: [
     Component.Graph(),
