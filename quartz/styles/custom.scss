@@ -1,3 +1,39 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+// custom.scss
+nav {
+    background-color: var(--primary);
+    padding: 1rem;
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+      li {
+        position: relative;
+        a {
+          color: var(--light);
+          text-decoration: none;
+          padding: 0.5rem;
+          &:hover {
+            color: var(--secondary);
+          }
+        }
+        .dropdown {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: var(--dark);
+          min-width: 150px;
+          li a {
+            padding: 0.5rem;
+          }
+        }
+        &:hover .dropdown {
+          display: block;
+        }
+      }
+    }
+  }
+  
