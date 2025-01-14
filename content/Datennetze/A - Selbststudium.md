@@ -580,8 +580,7 @@ Für virtuelle Verbindungen sind folgende 5 Parameter wichtig.
 - Damit man Verbindungen unterscheiden kann, müssen diese sich in **mindestens einem** dieser Parameter unterscheiden
 
 ### Verbindungsaufnahme (3-Wege-Handshake)
-Damit beide Geräte wissen, dass sie miteinander sprechen wollen, machen sie einen 3-Wege-Handshake:
-
+Damit beide Geräte wissen, dass sie miteinander sprechen wollen, macht man einen 3-Wege-Handshake:
 ![](static/assets/dn-11.png)
 
 1. SYN (Synchronisieren):
@@ -755,7 +754,7 @@ Es wird mehrfach Substitution und Transposition abwechselnd durchgeführt.
 -> hohe Konfusion
 
 ### AES (Advanced Encryption Standard)
-- AES kombiniert ale drei Verfahren
+- AES kombiniert alle drei Verfahren
 - wiederholt diese in mehreren Runden
 	-> hohe Konfusion und Diffusion
 
@@ -768,7 +767,7 @@ Es wird mehrfach Substitution und Transposition abwechselnd durchgeführt.
 ## Asymmetrische Verschlüsselung
 Schlüsselaustausch nach Diffie-Hellman möglich, aber erfordert viel "Hin- und Her".
 
-Asymmetrische Verschlüsselung arbeitet mit einem ==Schlüsselpaar==:
+Asymmetrische Verschlüsselung arbeitet mit einem <span style="background:rgba(240, 200, 0, 0.2)">Schlüsselpaar</span>:
 - **Public Key**: Kann nur verschlüsseln.
 - **Private Key**: Kann nur entschlüsseln und darf niemand bekommen.
 Da der private Schlüssel geheim bleibt, kann der öffentliche Schlüssel bedenkenlos weitergegeben werden.
@@ -780,7 +779,8 @@ Jeder Kommunikationspartner erstellt ein Schlüsselpaar:
 ### Vertraulichkeit
 - wenn beide vertraulich kommunizieren wollen, sendet jeder dem anderen seinen öffentlichen Schlüssel
 
-Alice verschlüsselt ihre Nachricht mit Bobs öffentlichem Schlüssel (K+B). Nur Bob kann diese Nachricht mit seinem privaten Schlüssel (K-B) entschlüsseln.
+Alice verschlüsselt ihre Nachricht mit Bobs öffentlichem Schlüssel (K+B). 
+Nur Bob kann diese Nachricht mit seinem privaten Schlüssel (K-B) entschlüsseln.
 <font color="#ff0000">ABER</font>: Er kann sich nicht sicher sein, dass diese Nachricht von Alice stammt.
 
 ### Authentizität und Integrität
@@ -789,7 +789,8 @@ Alice verschlüsselt ihre Nachricht mit Bobs öffentlichem Schlüssel (K+B). Nur
 	-> hohe Diffusion
 - Mit Hilfe des Hash-Werts kann der Empfänger also die Integrität der Nachricht überprüfen.
 
-Alice verschlüsselt diesen Hashwert mit ihrem privaten Schlüssel (K-A). Bob entschlüsselt den Hashwert mit Alices öffentlichem Schlüssel (K+A), um sicherzustellen, dass die Nachricht unverändert und wirklich von Alice stammt.
+Alice verschlüsselt diesen Hashwert mit ihrem privaten Schlüssel (K-A). 
+Bob entschlüsselt den Hashwert mit Alices öffentlichem Schlüssel (K+A), um sicherzustellen, dass die Nachricht unverändert und wirklich von Alice stammt.
 
 ### Kombination von Vertraulichkeit, Integrität und Authentizität
 In Praxis werden diese Prinzipien kombiniert:
