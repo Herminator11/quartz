@@ -340,4 +340,58 @@ Vorteile:
 ##### Canny-Operator
 - Prinzip: Detektion, Lokalisierung, Eindeutigkeit
 - Kriterium Detektion optimieren:
-	- Minimiere Wahrscheinlichkeit einen Kanten
+	- Minimiere Wahrscheinlichkeit einen Kantenpunkt zu übersehen/falsch zu markieren
+- Kriterium Lokalisierung optimieren:
+	- Kantenpunkt möglichst an der tatsächlichen Kante markieren
+- Kriterium Eindeutigkeit optimieren:
+	- Reale Kanten nur einmal markieren
+
+=> Optimaler Operator
+- Gute Approximation für Detektion: Erste Ableitung der Gaußfunktion
+  
+Vorgehen:
+1. Kantenrichtung bestimmen
+2. Faltung mit einer 2D-Gaußfunktion
+3. Ableitung in Richtung der Kante
+
+<u>Kantenbasierte Segmentierung</u>
+Schritte:
+1. Kantendetektion
+2. Liniendetektion
+3. Mögliche Nachbearbeitung 
+
+Canny-Operator wird häufig in Kombination mit Verfahren zur Linienextraktion wie dem Scobel-Operator verwendet, da diese denselben Effekt wie der Canny-Operator bieten.
+
+### Erkennung
+Grundprinzip:
+- Objekte durch Merkmale charakterisiert, die durch numerische Werte dargestellt werden
+- Merkmale bilden einen Merkmalsvektor, der im Merkmalsraum die Klassen/Modelle der Objekte definiert
+
+Beispiel:
+- Objekte wie Orange, Honigmelone, Bananen sind durch Fläche und Formfaktor unterscheidbar.
+- Zwei Merkmale sind notwendig (-> Wertebereiche können überlappen)
+- -> zusätzliche Merkmale (z.B. Farbe) können "Trennschärfe" erhöhen -> bessere Unterscheidung
+
+- Wenn es nicht genügend Merkmale gibt, kann es zu fehlerhafte Klassifikation
+- Lösung -> Einführung weiterer Merkmale, um eine eindeutige Erkennung zu kriegen
+
+Beispiel:
+
+|            | Orange | Wassermelone | Banane | Zitrone |                |
+| ---------- | ------ | ------------ | ------ | ------- | -------------- |
+| Formfaktor | rund   | rund         | unrund | rund    |                |
+| Größe      | mittel | groß         | mittel | mittel  | ->Pixel/Fläche |
+
+Was hat Formfaktor unrund und Größe "mittel"? -> Banane
+Was hat Formfaktor rund und Größe "mittel"? -> Zitrone und Orange
+
+Lösung:
+- Noch ein Merkmal hinzufügen
+
+|            | Orange | Wassermelone | Banane | Zitrone |                |
+| ---------- | ------ | ------------ | ------ | ------- | -------------- |
+| Formfaktor | rund   | rund         | unrund | rund    |                |
+| Größe      | mittel | groß         | mittel | mittel  | ->Pixel/Fläche |
+| Farbe      | orange | grün         | gelb   | gelb    | ->Hue          |
+
+- was hat Formfaktor "rund" und Größe "mittel" und Farbe "Orange" -> Orange
