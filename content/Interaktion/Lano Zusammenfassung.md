@@ -109,7 +109,7 @@ m<sub>pq</sub> = ∑ x<sup>p</sup> y<sup>q</sup>
 - geeigneten Schwellenwert finden
 	-> geeignete Aufnahmesituation nötig
 
-## morphologische Ooperationen
+## Morphologische Operationen
 Ziel: 
 - Störungen im Bild entfernen, bzw. geometrische Elemente hervorheben
 
