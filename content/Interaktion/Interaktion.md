@@ -109,6 +109,19 @@
 - Gesamtes Bild notwendig
 - jeder Pixel basiert auf Info vom Gesamtbild
 
+##### Hough-Transformation
+Die Hough-Transformation erkennt:
+1. Geraden (z.B. Linien in Kantenbildern)
+2. Kreise (z.B. Pupillen in Augenbildern, runde Objekte)
+
+- erkennt keine Kantenrichtungen
+- Kantenrichtung wird zuvor von Kantendetektoren (z.B. Sobel oder Canny) gegeben
+
+##### Region of Interest
+- Vor der Verarbeitung (hier Kontrastanhebung) erfolgt oft eine manuelle Auswahl des Bild-Bereichs, dessen Kontrast erhöht werden soll
+- typisch für Visualisierung in der Medizin oder andere Anwendungen mit manueller Bedienung
+- für Interaktion kann z.B. der Bild-Bereich ausgewählt werden, welche für die Interaktion "aktiv" sein soll
+
 #### Lokale Operationen
 - abh. von lokaler Umgebung des Pixels
 - Umgebung des Pixels = Fenster/Maske
